@@ -18,7 +18,7 @@ const reminderRoutes = require('./routes/reminderRoutes');
 const dietRoutes = require('./routes/dietRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.BACKEND_PORT || process.env.PORT || 5000;
 
 // Global Middlewares
 app.use(cors({
