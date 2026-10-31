@@ -4,7 +4,7 @@ import { mockUserProfile, coimbatoreDoctors, coimbatoreHospitals } from '../data
 const AuthContext = createContext(null);
 const AUTH_STORAGE_KEY = 'medicare_auth_user';
 const TOKEN_STORAGE_KEY = 'medicare_auth_token';
-const API_BASE = `http://localhost:${import.meta.env.VITE_BACKEND_PORT || 5000}/api`;
+const API_BASE = import.meta.env.VITE_API_BASE_URL || `http://localhost:${import.meta.env.VITE_BACKEND_PORT || 5000}/api`;
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {

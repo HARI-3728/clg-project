@@ -19,10 +19,14 @@ const dietRoutes = require('./routes/dietRoutes');
 
 const app = express();
 const PORT = process.env.BACKEND_PORT || process.env.PORT || 5000;
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:5173'] : [])
+].filter(Boolean);
 
 // Global Middlewares
 app.use(cors({
-  origin: true,
+  origin: allowedOrigins,
   credentials: true
 }));
 app.use(express.json({ limit: '15mb' }));

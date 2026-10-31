@@ -614,7 +614,7 @@ export const PatientDataProvider = ({ children }) => {
     }
   });
 
-  const API_BASE = `http://localhost:${import.meta.env.VITE_BACKEND_PORT || 5000}/api`;
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || `http://localhost:${import.meta.env.VITE_BACKEND_PORT || 5000}/api`;
 
   const getAuthHeaders = (extraHeaders = {}) => {
     const token = localStorage.getItem('medicare_auth_token');
