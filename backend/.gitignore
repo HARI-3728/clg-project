@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Runtime Uploads
+uploads/*
+!uploads/.gitkeep
+
+# Runtime Storage
+patient-data-store.json
+
+# Logs
+*.log
+npm-debug.log*
+
